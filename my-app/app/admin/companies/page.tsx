@@ -1,6 +1,6 @@
 import BreadCrumb from "@/components/breadcrumb";
 import { UserClient } from "@/components/tables/user-tables/client";
-import { users } from "@/constants/data";
+import { companies } from "@/constants/data";
 
 
 type Props = {
@@ -10,14 +10,14 @@ type Props = {
   };
 };
 
-const breadcrumbItems = [{ title: "User", link: "/dashboard/user" }];
+const breadcrumbItems = [{ title: "Company", link: "/dashboard/companies" }];
 
-export default function UsersPage() {
+export default function CompaniesPage() {
   return (
     <>
       <div className="flex-1 space-y-4  p-4 md:p-8 pt-6">
         <BreadCrumb items={breadcrumbItems} />
-        <UserClient data={users} dataType="User" />
+        <UserClient data={companies} dataType="Company" />
       </div>
     </>
   );
