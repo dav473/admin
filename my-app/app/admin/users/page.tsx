@@ -1,14 +1,6 @@
 import BreadCrumb from "@/components/breadcrumb";
-import { UserClient } from "@/components/tables/user-tables/client";
+import { UserClient } from "@/components/tables/user-tables/table";
 import { users } from "@/constants/data";
-
-
-type Props = {
-  params: {
-    title:string,
-
-  };
-};
 
 const breadcrumbItems = [{ title: "User", link: "/dashboard/user" }];
 

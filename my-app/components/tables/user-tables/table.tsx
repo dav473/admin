@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { User, Company } from "@/types/index";
 import { Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { userColumns, } from "./columns";
+import { userColumns, companyColumns } from "./columns";
 
 interface Props {
   data: User[] | Company[];
@@ -15,14 +15,12 @@ interface Props {
 
 export const UserClient: React.FC<Props> = ({ data, dataType }:Props) => {
   const router = useRouter();
-  console.log(dataType)
-
+  const { columns } = dataType === "User" ? { columns: userColumns } : { columns: companyColumns };
   return (
     <>
       <div className="flex items-start justify-between">
         <Heading
           title={`${dataType} (${data.length})`}
-          description="Manage users (Client side table functionalities.)"
         />
         <Button
           className="text-xs md:text-sm"
@@ -32,7 +30,7 @@ export const UserClient: React.FC<Props> = ({ data, dataType }:Props) => {
         </Button>
       </div>
       <Separator />
-      <DataTable searchKey="name" columns={userColumns} data={data} />
+      <DataTable columns={columns} data={data} searchKey="name" />
     </>
   );
 };

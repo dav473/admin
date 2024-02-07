@@ -1,17 +1,9 @@
 import BreadCrumb from "@/components/breadcrumb";
-import { UserClient } from "@/components/tables/user-tables/client";
+import { UserClient } from "@/components/tables/user-tables/table";
 import { companies } from "@/constants/data";
 
 
-type Props = {
-  params: {
-    title:string,
-
-  };
-};
-
 const breadcrumbItems = [{ title: "Company", link: "/dashboard/companies" }];
-
 export default function CompaniesPage() {
   return (
     <>

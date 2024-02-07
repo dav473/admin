@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { User } from "@/constants/data";
+import { User } from "@/types/index";
 import { Edit, MoreHorizontal, ShieldMinus,BookUser, ArrowLeftRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
