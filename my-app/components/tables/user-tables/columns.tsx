@@ -84,8 +84,8 @@ export const companyColumns: ColumnDef<Company>[] = [
     header:"JURISDICTION",    
     accessorKey: "jurisdiction",
     cell: ({ row }) => {
-      const member:string[] = row.getValue("jurisdiction");
-      return <div>{member.length}</div>
+      const jurisdiction:string[] = row.getValue("jurisdiction");
+      return <div>{jurisdiction.length}</div>
     }
   },
 
