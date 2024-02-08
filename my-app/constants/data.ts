@@ -219,20 +219,20 @@ export const navItems: NavItem[] = [
     isTopSeparater:true,
     description:"View details",
     icon:"BookUser",
-    url:"/admin/companies/edit"
+    url:"/admin/users/"
   },
   {
     id:2,
     isTopSeparater:true,
     description:"View transactions",
     icon:"ArrowLeftRight",
-    url:"/admin/companies/edit"
+    url:"#"
   },{
     id:3,
     isTopSeparater:false,
     description:"Update",
     icon:"PenLine",
-    url:"/admin/companies/edit"
+    url:"/admin/users/edit/"
   },{
     id:4,
     isTopSeparater:false,
@@ -245,15 +245,15 @@ export const navItems: NavItem[] = [
 
 export const CompanyActions: ColumnAction[] = [{
   id:1,
-  isTopSeparater:true,
+  isTopSeparater:false,
   description:"View details",
   icon:"BookUser",
-  url:"/admin/companies/edit"
+  url:"/admin/companies/"
 },
 {
   id:2,
-  isTopSeparater:true,
+  isTopSeparater:false,
   description:"Update",
   icon:"PenLine",
-  url:"/admin/companies/edit"
+  url:"/admin/companies/edit/"
 }]

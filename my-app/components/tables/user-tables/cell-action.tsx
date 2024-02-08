@@ -23,10 +23,11 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 interface Props {
+  uuid:string;
   action: ColumnAction[];
 }
 
-export const CellAction = ({ action }: Props) => {
+export const CellAction = ({ uuid,action }: Props) => {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const router = useRouter();
@@ -57,7 +58,7 @@ export const CellAction = ({ action }: Props) => {
           {action
             .filter((item) => item.isTopSeparater)
             .map((item) => (
-              <DropdownMenuItem key={item.id}  onClick={() => console.log("TODO")}>
+              <DropdownMenuItem key={item.id}  onClick={() => router.push(item.url+"/"+uuid)}>
               <Icon name={item.icon} className="mr-2 h-4 w-4"/>{item.description}
             </DropdownMenuItem>
             ))}
@@ -68,7 +69,7 @@ export const CellAction = ({ action }: Props) => {
           {action
             .filter((item) => !item.isTopSeparater)
             .map((item) => (
-              <DropdownMenuItem key={item.id} onClick={() => setOpen(true)}>
+              <DropdownMenuItem key={item.id} onClick={() => router.push(item.url+"/"+uuid)}>
                 <Icon name={item.icon} className="mr-2 h-4 w-4"/>{item.description}
               </DropdownMenuItem>
             ))}

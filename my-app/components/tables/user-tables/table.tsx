@@ -13,7 +13,7 @@ interface Props {
   dataType?:string;
 }
 
-export const UserClient: React.FC<Props> = ({ data, dataType }:Props) => {
+export const InfoTable: React.FC<Props> = ({ data, dataType }:Props) => {
   const router = useRouter();
   const { columns } = dataType === "User" ? { columns: userColumns } : { columns: companyColumns };
   return (
