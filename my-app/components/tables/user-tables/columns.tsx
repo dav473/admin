@@ -4,6 +4,8 @@ import { Company, User } from "@/types/index"
 import { ColumnDef } from "@tanstack/react-table"
 import { CellAction } from "./cell-action";
 import { Leaf } from "lucide-react";
+import { Selection } from "../../ui/cus_selection";
+import { UserActions, CompanyActions } from "@/constants/data";
 
 
 export const userColumns: ColumnDef<User>[] = [
@@ -18,17 +20,14 @@ export const userColumns: ColumnDef<User>[] = [
     accessorFn: (row) => `${row.first_name} ${row.last_name}`,
    
   },
-
   {
-    header: "COMPANY",
-    accessorFn: (row) => `${row.company}`,
+    header:"COMPANY & ROLE",
+    cell: ({ row }) => {
+      const {company, role} = row.original;
+      const combinedArray = company.map((company, index) => `${company}  -  ${role[index]}`);
+      return <Selection data={combinedArray} />
+    }
   },
-
-  {
-    header: "ROLE",
-    accessorFn: (row) => `${row.role}`,
-  },
-
   {
     header: "ONBOARD",
     accessorKey: "onboarded",
@@ -56,7 +55,7 @@ export const userColumns: ColumnDef<User>[] = [
   {
     header:"ACTIONS",
     id: "actions",
-    cell: ({ row }) => <CellAction data={row.original} />,
+    cell: ({ row }) => <CellAction action={UserActions} />,
   },
 ]
 
@@ -72,7 +71,7 @@ export const companyColumns: ColumnDef<Company>[] = [
    
   },
   {
-    header:"MEMBERS",    
+    header:"MEMBER",    
     accessorKey: "user",
     cell: ({ row }) => {
       const member:string[] = row.getValue("user");
@@ -85,7 +84,7 @@ export const companyColumns: ColumnDef<Company>[] = [
     accessorKey: "jurisdiction",
     cell: ({ row }) => {
       const jurisdiction:string[] = row.getValue("jurisdiction");
-      return <div>{jurisdiction.length}</div>
+      return <Selection data={jurisdiction} />
     }
   },
 
@@ -101,6 +100,6 @@ export const companyColumns: ColumnDef<Company>[] = [
   {
     header:"ACTIONS",
     id: "actions",
-    cell: ({ row }) => <CellAction data={row.original} />,
+    cell: ({ row }) => <CellAction action={CompanyActions} />,
   },
 ]

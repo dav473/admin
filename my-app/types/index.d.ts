@@ -1,12 +1,18 @@
 import { icons } from "lucide-react";
 
-
+export interface ColumnAction{
+  id:number;
+  isTopSeparater:boolean;
+  description:string;
+  icon: keyof typeof icons;
+  url:string;
+}
 export interface User{
   uuid: string;
   first_name: string;
   last_name: string;
-  company: string;
-  role: string;
+  company: string[];
+  role: string[];
   created_at:string;
   onboarded: boolean;
   isactive:boolean;

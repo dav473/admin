@@ -1,6 +1,7 @@
 "use client";
 import { AlertModal } from "@/components/ui/cus_alert-modal";
 import { Button } from "@/components/ui/button";
+import Icon from '@/components/ui/cus_icon';
 
 import {
   DropdownMenu,
@@ -10,21 +11,29 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { User } from "@/types/index";
-import { Edit, MoreHorizontal, ShieldMinus,BookUser, ArrowLeftRight } from "lucide-react";
+import { ColumnAction } from "@/types/index";
+import {
+  Edit,
+  MoreHorizontal,
+  ShieldMinus,
+  BookUser,
+  ArrowLeftRight,
+} from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-interface CellActionProps {
-  data: User;
+interface Props {
+  action: ColumnAction[];
 }
 
-export const CellAction: React.FC<CellActionProps> = ({ data }) => {
+export const CellAction = ({ action }: Props) => {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
   const onConfirm = async () => {};
+
+
 
   return (
     <>
@@ -44,26 +53,29 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
 
-          <DropdownMenuItem  onClick={() => console.log("TODO")} > 
-          <BookUser className="mr-2 h-4 w-4" /> View details</DropdownMenuItem>
 
-          <DropdownMenuItem  onClick={() => console.log("TODO")} > 
-          <ArrowLeftRight className="mr-2 h-4 w-4" /> View transactions</DropdownMenuItem>
-            <DropdownMenuSeparator />
+          {action
+            .filter((item) => item.isTopSeparater)
+            .map((item) => (
+              <DropdownMenuItem key={item.id}  onClick={() => console.log("TODO")}>
+              <Icon name={item.icon} className="mr-2 h-4 w-4"/>{item.description}
+            </DropdownMenuItem>
+            ))}
 
-          <DropdownMenuItem
-            onClick={() => router.push(`/dashboard/user/${data.uuid}`)}
-          >
-            <Edit className="mr-2 h-4 w-4" /> Update
-          </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => setOpen(true)}>
-            <ShieldMinus className="mr-2 h-4 w-4" /> Deactive
-          </DropdownMenuItem>
+
+          <DropdownMenuSeparator />
+
+          {action
+            .filter((item) => !item.isTopSeparater)
+            .map((item) => (
+              <DropdownMenuItem key={item.id} onClick={() => setOpen(true)}>
+                <Icon name={item.icon} className="mr-2 h-4 w-4"/>{item.description}
+              </DropdownMenuItem>
+            ))}
         </DropdownMenuContent>
       </DropdownMenu>
     </>
   );
 };
 
-
-ArrowLeftRight
+ArrowLeftRight;
