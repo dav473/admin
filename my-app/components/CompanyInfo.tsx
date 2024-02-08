@@ -21,7 +21,7 @@ import {
 const CompanyInfo = () => {
   return (
     <>
-   <div className="flex space-x-4">
+   <div className="flex space-x-6">
 
    <Card className="w-2/6">
       <CardHeader>
@@ -31,7 +31,7 @@ const CompanyInfo = () => {
         <form>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="uuid">UUID</Label>
               <Input id="name" placeholder="Name of your project" />
             </div>
             <div className="flex flex-col space-y-1.5">
@@ -55,7 +55,7 @@ const CompanyInfo = () => {
 
     <Card className="w-4/6">
       <CardHeader>
-        <CardTitle>Create project</CardTitle>
+        <CardTitle>Members</CardTitle>
       </CardHeader>
       <CardContent>
         <form>

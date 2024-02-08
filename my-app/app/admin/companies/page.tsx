@@ -1,7 +1,6 @@
 import BreadCrumb from "@/components/breadcrumb";
 import { InfoTable } from "@/components/tables/user-tables/table";
 import { companies } from "@/constants/data";
-import { Heading } from "@/components/ui/cus_heading";
 
 const breadcrumbItems = [{ title: "Company", link: "/dashboard/companies" }];
 export default function CompaniesPage() {
