@@ -6,18 +6,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 
 interface Props{
   className:string,
-  users:string[]
+  users:string[]|undefined
 }
 
 const CompanyMemberCard = ({className,users}:Props) => {
   return (
 <>
 <Card className={className}>
-      <CardHeader>
-        <CardTitle>Members</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <form>
+
+      <CardContent className='mt-2 pt-6'>
+        <form className='flex '>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Name</Label>
