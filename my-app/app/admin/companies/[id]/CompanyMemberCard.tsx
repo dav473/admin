@@ -5,10 +5,11 @@ import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 interface Props{
-  className:string
+  className:string,
+  users:string[]
 }
 
-const CompanyMemberCard = ({className}:Props) => {
+const CompanyMemberCard = ({className,users}:Props) => {
   return (
 <>
 <Card className={className}>

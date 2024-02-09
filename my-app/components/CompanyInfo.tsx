@@ -20,8 +20,8 @@ const CompanyInfo = () => {
    <div className="flex space-x-6 ">
 
     <CompanyInfoCard className="w-2/6" company={res}/>
-    <CompanyMemberCard className="w-4/6" />   
-    
+    <CompanyMemberCard className="w-4/6" users={res.user} />   
+
    </div>
     </>
   );
