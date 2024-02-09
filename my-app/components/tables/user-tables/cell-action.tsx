@@ -13,10 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ColumnAction } from "@/types/index";
 import {
-  Edit,
   MoreHorizontal,
-  ShieldMinus,
-  BookUser,
   ArrowLeftRight,
 } from "lucide-react";
 import { useRouter } from "next/navigation";

@@ -1,87 +1,27 @@
+"use client"
 import React from "react";
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+import CompanyInfoCard from "@/app/admin/companies/[id]/CompanyInfoCard";
+import { usePathname } from 'next/navigation'
+import CompanyMemberCard from "@/app/admin/companies/[id]/CompanyMemberCard";
+import {companies} from "@/constants/data";
+import {Company} from "@/types/index"
+
+const getCompanyDate = (uuid:string)=>{
+  return companies.find(company => company.uuid === uuid);
+}
 
 const CompanyInfo = () => {
+  const pathname = usePathname()
+  const pathnameArray = pathname.split("/")
+  const uuid = pathnameArray[pathnameArray.length - 1]
+  const res = getCompanyDate(uuid);
   return (
     <>
-   <div className="flex space-x-6">
+   <div className="flex space-x-6 ">
 
-   <Card className="w-2/6">
-      <CardHeader>
-        <CardTitle>Create project</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="uuid">UUID</Label>
-              <Input id="name" placeholder="Name of your project" />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="framework">Framework</Label>
-              <Select>
-                <SelectTrigger id="framework">
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent position="popper">
-                  <SelectItem value="next">Next.js</SelectItem>
-                  <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                  <SelectItem value="astro">Astro</SelectItem>
-                  <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </form>
-      </CardContent>
-    </Card>
-
-    <Card className="w-4/6">
-      <CardHeader>
-        <CardTitle>Members</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Name of your project" />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="framework">Framework</Label>
-              <Select>
-                <SelectTrigger id="framework">
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent position="popper">
-                  <SelectItem value="next">Next.js</SelectItem>
-                  <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                  <SelectItem value="astro">Astro</SelectItem>
-                  <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </form>
-      </CardContent>
-    </Card>
+    <CompanyInfoCard className="w-2/6" company={res}/>
+    <CompanyMemberCard className="w-4/6" />   
+    
    </div>
     </>
   );
