@@ -6,6 +6,39 @@ import { CellAction } from "./cell-action";
 import { Leaf } from "lucide-react";
 import { Selection } from "../../ui/cus_selection";
 import { UserActions, CompanyActions } from "@/constants/data";
+import { Button } from "@/components/ui/button"
+import Icon from '@/components/ui/cus_icon';
+import Link from "next/link";
+
+export const SimpleUserColumns: ColumnDef<User>[] = [
+  {
+    header: "UUID",
+    accessorKey: "uuid",
+  },
+  {
+    header: "FULL NAME",
+    id: "name",
+    accessorFn: (row) => `${row.first_name} ${row.last_name}`,
+  },
+  {
+    header: "ROLE",
+    accessorKey: "role",
+  },
+  {
+    header: "EMAIL",
+    accessorKey: "email",
+  },
+  {
+    header: "ACTION",
+    id: "action",
+    cell: ({ row }) => (
+      <Button className="h-9 px-4 py-2" variant="outline">
+       <Icon name="ChevronRight" className="mr-2 h-4 w-4"/>View details
+    </Button>
+    ),
+  },
+];
+
 
 export const userColumns: ColumnDef<User>[] = [
   {
@@ -59,6 +92,8 @@ export const userColumns: ColumnDef<User>[] = [
     ),
   },
 ];
+
+
 
 export const companyColumns: ColumnDef<Company>[] = [
   {

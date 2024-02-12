@@ -23,7 +23,7 @@ export interface Company{
   created_at: string;
   name: string;
   jurisdiction?: string[];
-  user?: string[];
+  user?: User[];
 }
 
 export interface NavItem {

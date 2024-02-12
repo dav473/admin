@@ -8,18 +8,18 @@ import {
 import React from 'react'
 
 interface Props {
-    data:string[]
+    data:string[] | undefined
 }
 export const Selection = ({data}:Props) => {
   return (
-    <div>
-        <Select>
-  <SelectTrigger className="w-[180px]" disabled={data.length === 0}>
-    <SelectValue placeholder={data[0]} />
+    <div >
+        <Select >
+  <SelectTrigger disabled={data?.length === 0}>
+    <SelectValue placeholder={data?.[0]}  />
   </SelectTrigger>
-  <SelectContent>
+  <SelectContent  >
     {
-        data.map((item) => <SelectItem key={item} value={item}>{item}</SelectItem>)
+        data?.map((item) => <SelectItem key={item} value={item}>{item}</SelectItem>)
     }
   </SelectContent>
 </Select>

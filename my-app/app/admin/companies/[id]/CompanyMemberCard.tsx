@@ -1,45 +1,30 @@
-import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Company } from "@/types";
+import { DataTable } from "@/components/ui/cus_data-table";
+import { SimpleUserColumns } from "@/components/tables/user-tables/columns";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
-interface Props{
-  className:string,
-  users:string[]|undefined
+interface Props {
+  className?:string,
+  company:Company|undefined
 }
 
-const CompanyMemberCard = ({className,users}:Props) => {
+
+const CompanyMemberCard = ({ className,company }: Props) => {
+  const columns = SimpleUserColumns;
   return (
-<>
-<Card className={className}>
+    <>
+      <Card className="flex-1">
+        <CardHeader>
+          <CardTitle>Company Members {`(${company?.user?.length})`}</CardTitle>
+        </CardHeader>
+        <CardContent className="h-full">
+          <DataTable columns={columns} data={company?.user} />
+        </CardContent>
+      </Card>
+    </>
+  );
+};
 
-      <CardContent className='mt-2 pt-6'>
-        <form className='flex '>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Name of your project" />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="framework">Framework</Label>
-              <Select>
-                <SelectTrigger id="framework">
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent position="popper">
-                  <SelectItem value="next">Next.js</SelectItem>
-                  <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                  <SelectItem value="astro">Astro</SelectItem>
-                  <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </form>
-      </CardContent>
-    </Card></>
-  )
-}
-
-export default CompanyMemberCard
+export default CompanyMemberCard;

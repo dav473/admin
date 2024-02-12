@@ -30,6 +30,7 @@ export const InfoTable: React.FC<Props> = ({ data, dataType }:Props) => {
         </Button>
       </div>
       <Separator />
+      
       <DataTable columns={columns} data={data} searchKey="name" />
     </>
   );
