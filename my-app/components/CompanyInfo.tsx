@@ -45,10 +45,10 @@ const CompanyInfo = () => {
     <>
       <div className="flex justify-between flex-wrap flex-1 ">
         <div className="basis-1/3 pr-2 h-80">
-          <CompanyInfoCard className="w-full" company={res} />
+          <CompanyInfoCard className="w-full h-full" company={res} />
         </div>
         <div className="basis-2/3 pr-2 h-80">
-          <CompanyMetaInfoCard className="w-full" company={res} />
+          <CompanyMetaInfoCard className="w-full h-full" company={res} />
         </div>
         <div className="basis-full pt-2 overflow-y-hidden ">
             <CompanyMemberCard company={res} />
