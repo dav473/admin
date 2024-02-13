@@ -6,9 +6,8 @@ import { CellAction } from "./cell-action";
 import { Leaf } from "lucide-react";
 import { Selection } from "../../ui/cus_selection";
 import { UserActions, CompanyActions } from "@/constants/data";
-import { Button } from "@/components/ui/button"
-import Icon from '@/components/ui/cus_icon';
-import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import Icon from "@/components/ui/cus_icon";
 
 export const SimpleUserColumns: ColumnDef<User>[] = [
   {
@@ -26,19 +25,44 @@ export const SimpleUserColumns: ColumnDef<User>[] = [
   },
   {
     header: "EMAIL",
-    accessorKey: "email",
+    accessorKey: "uuid",
   },
   {
     header: "ACTION",
     id: "action",
     cell: ({ row }) => (
-      <Button className="h-9 px-4 py-2" variant="outline">
-       <Icon name="ChevronRight" className="mr-2 h-4 w-4"/>View details
-    </Button>
+      <Button className="h-9 px-4 py-2 mr-4" variant="outline">
+        <Icon name="ChevronRight" className="mr-2 h-4 w-4" />
+        View details
+      </Button>
     ),
   },
 ];
 
+export const EditSimplerUserColumns: ColumnDef<User>[] =
+  SimpleUserColumns.slice(0, -1).map((column) => ({ ...column }));
+EditSimplerUserColumns.push({
+  header: "ACTION",
+  id: "action",
+  cell: ({ row }) => (
+    <div>
+      <Button
+        className="h-9 px-4 py-2 mr-8 ring-1 ring-neutral-950 ring-inset"
+        variant="outline"
+      >
+        <Icon name="PenLine" className="mr-2 h-4 w-4" />
+        Update
+      </Button>
+      <Button
+        className="h-9 px-4 py-2 pr ring-1 ring-red-500 ring-inset"
+        variant="outline"
+      >
+        <Icon name="Trash2" className="mr-2 h-4 w-4" />
+        Remove
+      </Button>
+    </div>
+  ),
+});
 
 export const userColumns: ColumnDef<User>[] = [
   {
@@ -92,8 +116,6 @@ export const userColumns: ColumnDef<User>[] = [
     ),
   },
 ];
-
-
 
 export const companyColumns: ColumnDef<Company>[] = [
   {

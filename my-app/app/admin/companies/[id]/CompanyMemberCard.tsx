@@ -2,17 +2,19 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Company } from "@/types";
 import { DataTable } from "@/components/ui/cus_data-table";
-import { SimpleUserColumns } from "@/components/tables/user-tables/columns";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  EditSimplerUserColumns,
+  SimpleUserColumns,
+} from "@/components/tables/user-tables/columns";
 
 interface Props {
-  className?:string,
-  company:Company|undefined
+  className?: string;
+  company: Company | undefined;
+  isEdit?: boolean;
 }
 
-
-const CompanyMemberCard = ({ className,company }: Props) => {
-  const columns = SimpleUserColumns;
+const CompanyMemberCard = ({ className, company, isEdit }: Props) => {
+  const columns = isEdit ? EditSimplerUserColumns : SimpleUserColumns;
   return (
     <>
       <Card className="flex-1">
