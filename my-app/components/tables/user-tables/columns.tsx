@@ -9,7 +9,52 @@ import { UserActions, CompanyActions } from "@/constants/data";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/cus_icon";
 
-export const SimpleUserColumns: ColumnDef<User>[] = [
+export const SimpleUserColumns: ColumnDef<Company>[] = [
+  {
+    header:"COMPANY",
+    accessorKey:"company"
+  },
+  {
+    header: "ROLE",
+    accessorKey: "company_role",
+  },
+  {
+    header: "ACTION",
+    id: "action",
+    cell: ({ row }) => (
+      <Button className="h-9 px-4 py-2 mr-4" variant="outline">
+        <Icon name="ChevronRight" className="mr-2 h-4 w-4" />
+        View details
+      </Button>
+    ),
+  },
+]
+export const EditSimpleUserColumns: ColumnDef<Company>[] = SimpleUserColumns.slice(0, -1).map((column) => ({ ...column }));
+EditSimpleUserColumns.push({
+header: "ACTION",
+id: "action",
+cell: ({ row }) => (
+  <div>
+    <Button
+      className="h-9 px-4 py-2 mr-8 ring-1 ring-neutral-950 ring-inset"
+      variant="outline"
+    >
+      <Icon name="PenLine" className="mr-2 h-4 w-4" />
+      Update
+    </Button>
+    <Button
+      className="h-9 px-4 py-2 pr ring-1 ring-red-500 ring-inset"
+      variant="outline"
+    >
+      <Icon name="Trash2" className="mr-2 h-4 w-4" />
+      Remove
+    </Button>
+  </div>
+),
+});
+
+
+export const SimpleCompanyColumns: ColumnDef<User>[] = [
   {
     header: "UUID",
     accessorKey: "uuid",
@@ -39,9 +84,9 @@ export const SimpleUserColumns: ColumnDef<User>[] = [
   },
 ];
 
-export const EditSimplerUserColumns: ColumnDef<User>[] =
-  SimpleUserColumns.slice(0, -1).map((column) => ({ ...column }));
-EditSimplerUserColumns.push({
+export const EditSimpleCompanyColumns: ColumnDef<User>[] =
+SimpleCompanyColumns.slice(0, -1).map((column) => ({ ...column }));
+  EditSimpleCompanyColumns.push({
   header: "ACTION",
   id: "action",
   cell: ({ row }) => (

@@ -12,7 +12,7 @@ export interface User{
   first_name: string;
   last_name: string;
   company: string[];
-  role: string[];
+  role: UserRole[];
   created_at:string;
   onboarded: boolean;
   isactive:boolean;
@@ -36,3 +36,8 @@ export interface NavItem {
   description?: string;
 }
 
+export interface UserRole{
+  uuid:string;
+  company:string;
+  company_role:string;
+}

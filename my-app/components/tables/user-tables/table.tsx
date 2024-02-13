@@ -7,6 +7,7 @@ import { User, Company } from "@/types/index";
 import { Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { userColumns, companyColumns } from "./columns";
+import AddCompany from "@/components/AddDialog";
 
 interface Props {
   data: User[] | Company[];
@@ -22,12 +23,8 @@ export const InfoTable: React.FC<Props> = ({ data, dataType }:Props) => {
         <Heading
           title={`${dataType} (${data.length})`}
         />
-        <Button
-          className="text-xs md:text-sm"
-          onClick={() => router.push(`/dashboard/user/new`)}
-        >
-          <Plus className="mr-2 h-4 w-4" /> Add New
-        </Button>
+        
+        <AddCompany />
       </div>
       <Separator />
       

@@ -2,17 +2,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { Company } from "@/types";
+import { Company, User } from "@/types";
 import React from "react";
 import NewMetaInfo from "./NewMetaInfo";
 
 interface Props {
   className: string;
-  company: Company | undefined;
+  data: Company | User |undefined;
   isEdit?: boolean;
+  type:"company" | "user";
 }
 
-const CompanyMetaInfoCard = ({ className, company, isEdit }: Props) => {
+const CompanyMetaInfoCard = ({ className, data, isEdit, type }: Props) => {
   return (
     <Card className={className}>
       <CardHeader>
@@ -46,12 +47,13 @@ const CompanyMetaInfoCard = ({ className, company, isEdit }: Props) => {
                 <Label htmlFor="meta3">SHIPPING COUNTRY</Label>
                 <Input id="meta3" value="Canada" readOnly />
               </div>
+            
+              {isEdit &&               <div className="flex flex-col space-y-1.5">
               <Separator />
-              <div className="flex flex-col space-y-1.5">
                 <NewMetaInfo />
                 <NewMetaInfo />
                 <NewMetaInfo />
-              </div>
+              </div>}
             </div>
           </form>
         </div>

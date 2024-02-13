@@ -1,23 +1,23 @@
 import React from "react";
 import BreadCrumb from "@/components/breadcrumb";
-import CompanyInfo from "@/components/CompanyInfo";
+import InfoCards from "@/components/CompanyInfo";
 
 const breadcrumbItems = [
-  { title: "Company", link: "/dashboard/companies/Create" },
+  { title: "User", link: "/dashboard/companies/Create" },
   { title: "Edit", link: "/dashboard/companies/Create" },
 ];
 
-const CompanyEditPage = () => {
+const UserEditPage = () => {
   return (
     <>
       <div className="h-screen space-y-4  p-4 md:p-8 pt-6">
         <BreadCrumb items={breadcrumbItems} />
         <div className="h-full">
-          <CompanyInfo isEdit={true} type={"company"} />
+        <InfoCards isEdit={true} type={'user'} />
         </div>
       </div>
     </>
   );
 };
 
-export default CompanyEditPage;
+export default UserEditPage;

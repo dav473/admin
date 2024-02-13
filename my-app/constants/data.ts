@@ -12,7 +12,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "Candice",
         last_name: "Schiner",
         company: ["GreenLeaf", "CannabisCo", "WeedWorks", "HighLifeEnterprises"],
-        role: ["User","User","User","User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"Admin"},{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"CannabisCo",company_role:"Admin"},{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"WeedWorks",company_role:"Admin"},{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"HighLifeEnterprises",company_role:"Admin"}],
         created_at: "2002-07-08T09:31:05.843Z",
         onboarded: false,
         isactive: false
@@ -22,7 +22,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "John",
         last_name: "Doe",
         company: ["CannaTech"],
-        role: ["User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"Admin"},{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"CannabisCo",company_role:"Admin"},{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"WeedWorks",company_role:"Admin"},{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"HighLifeEnterprises",company_role:"Admin"}],
         created_at: "2016-04-22T20:14:17.621Z",
         onboarded: true,
         isactive: true
@@ -32,7 +32,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "John",
         last_name: "Doe",
         company: ["CannaTech"],
-        role: ["User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
         created_at: "2016-04-22T20:14:17.621Z",
         onboarded: true,
         isactive: true
@@ -42,7 +42,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "John",
         last_name: "Doe",
         company: ["CannaTech"],
-        role: ["User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
         created_at: "2016-04-22T20:14:17.621Z",
         onboarded: true,
         isactive: true
@@ -52,7 +52,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "John",
         last_name: "Doe",
         company: ["CannaTech"],
-        role: ["User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
         created_at: "2016-04-22T20:14:17.621Z",
         onboarded: true,
         isactive: true
@@ -61,7 +61,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "Candice",
         last_name: "Schiner",
         company: ["GreenLeaf", "CannabisCo", "WeedWorks", "HighLifeEnterprises"],
-        role: ["User","User","User","User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
         created_at: "2002-07-08T09:31:05.843Z",
         onboarded: false,
         isactive: false
@@ -71,7 +71,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "John",
         last_name: "Doe",
         company: ["CannaTech"],
-        role: ["User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
         created_at: "2016-04-22T20:14:17.621Z",
         onboarded: true,
         isactive: true
@@ -81,7 +81,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "John",
         last_name: "Doe",
         company: ["CannaTech"],
-        role: ["User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
         created_at: "2016-04-22T20:14:17.621Z",
         onboarded: true,
         isactive: true
@@ -91,7 +91,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "John",
         last_name: "Doe",
         company: ["CannaTech"],
-        role: ["User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
         created_at: "2016-04-22T20:14:17.621Z",
         onboarded: true,
         isactive: true
@@ -101,7 +101,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "John",
         last_name: "Doe",
         company: ["CannaTech"],
-        role: ["User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
         created_at: "2016-04-22T20:14:17.621Z",
         onboarded: true,
         isactive: true
@@ -110,7 +110,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "Candice",
         last_name: "Schiner",
         company: ["GreenLeaf", "CannabisCo", "WeedWorks", "HighLifeEnterprises"],
-        role: ["User","User","User","User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
         created_at: "2002-07-08T09:31:05.843Z",
         onboarded: false,
         isactive: false
@@ -120,7 +120,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "John",
         last_name: "Doe",
         company: ["CannaTech"],
-        role: ["User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
         created_at: "2016-04-22T20:14:17.621Z",
         onboarded: true,
         isactive: true
@@ -130,7 +130,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "John",
         last_name: "Doe",
         company: ["CannaTech"],
-        role: ["User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
         created_at: "2016-04-22T20:14:17.621Z",
         onboarded: true,
         isactive: true
@@ -140,7 +140,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "John",
         last_name: "Doe",
         company: ["CannaTech"],
-        role: ["User"],
+        role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
         created_at: "2016-04-22T20:14:17.621Z",
         onboarded: true,
         isactive: true
@@ -150,7 +150,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
         first_name: "John",
         last_name: "Doe",
         company: ["CannaTech"],
-        role: ["User"],
+        role: [],
         created_at: "2016-04-22T20:14:17.621Z",
         onboarded: true,
         isactive: true
@@ -221,7 +221,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
       first_name: "Candice",
       last_name: "Schiner",
       company: ["GreenLeaf", "CannabisCo", "WeedWorks", "HighLifeEnterprises"],
-      role: ["User","User","User","User"],
+      role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
       created_at: "2002-07-08T09:31:05.843Z",
       onboarded: false,
       isactive: false
@@ -231,7 +231,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
       first_name: "John",
       last_name: "Doe",
       company: ["CannaTech"],
-      role: ["User"],
+      role: [{uuid: "4423f71a-448e-4e34-9f7a-d33a0a75e7d6",company:"GreenLeaf",company_role:"User"}],
       created_at: "2016-04-22T20:14:17.621Z",
       onboarded: true,
       isactive: true
@@ -241,7 +241,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
       first_name: "Alice",
       last_name: "Johnson",
       company: ["BudCorp"],
-      role: ["User"],
+      role: [],
       created_at: "2008-12-01T03:52:33.019Z",
       onboarded: true,
       isactive: true
@@ -251,7 +251,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
       first_name: "David",
       last_name: "Smith",
       company: ["HerbSolutions"],
-      role: ["User"],
+      role: [],
       created_at: "2019-09-30T14:05:45.993Z",
       onboarded: false,
       isactive: true
@@ -261,7 +261,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
       first_name: "Emma",
       last_name: "Wilson",
       company: ["GanjaGroup"],
-      role: ["User"],
+      role: [],
       created_at: "2010-02-19T07:46:57.348Z",
       onboarded: true,
       isactive: true
@@ -271,7 +271,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
       first_name: "James",
       last_name: "Brown",
       company: ["CannabisCo"],
-      role: ["User"],
+      role: [],
       created_at: "2006-10-17T19:28:41.489Z",
       onboarded: false,
       isactive: true
@@ -281,7 +281,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
       first_name: "Laura",
       last_name: "White",
       company: ["THC Innovations"],
-      role: ["User"],
+      role: [],
       created_at: "2017-05-11T16:39:59.775Z",
       onboarded: true,
       isactive: true
@@ -291,7 +291,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
       first_name: "Michael",
       last_name: "Lee",
       company: ["MarijuanaTech"],
-      role: ["User"],
+      role: [],
       created_at: "2014-11-28T22:53:22.234Z",
       onboarded: false,
       isactive: true
@@ -301,7 +301,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
       first_name: "Olivia",
       last_name: "Green",
       company: ["CannabisCreations"],
-      role: ["User"],
+      role: [],
       created_at: "2005-08-05T13:20:37.610Z",
       onboarded: true,
       isactive: true
@@ -311,7 +311,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
       first_name: "Robert",
       last_name: "Taylor",
       company: ["PotPro"],
-      role: ["User"],
+      role: [],
       created_at: "2012-06-26T01:12:49.889Z",
       onboarded: false,
       isactive: true
@@ -321,7 +321,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
       first_name: "Robert",
       last_name: "Taylor",
       company: ["PotPro"],
-      role: ["User"],
+      role: [],
       created_at: "2012-06-26T01:12:49.889Z",
       onboarded: false,
       isactive: true
@@ -330,7 +330,7 @@ import { NavItem, User, Company, ColumnAction } from "@/types";
   
 export const navItems: NavItem[] = [
     {
-      title: "Dashboard",
+      title: "Dashboard(TODO)",
       href: "/admin",
       icon: "LayoutDashboard",
       label: "Dashboard",
@@ -348,7 +348,7 @@ export const navItems: NavItem[] = [
       label: "Company",
     },
     {
-      title: "Setting",
+      title: "Setting(TODO)",
       href: "/",
       icon: "Settings",
       label: "Setting",
@@ -371,19 +371,19 @@ export const navItems: NavItem[] = [
   {
     id:2,
     isTopSeparater:true,
-    description:"View transactions",
+    description:"View transactions(TODO)",
     icon:"ArrowLeftRight",
     url:"#"
   },{
     id:3,
     isTopSeparater:false,
-    description:"Update",
+    description:"Edit",
     icon:"PenLine",
     url:"/admin/users/edit/"
   },{
     id:4,
     isTopSeparater:false,
-    description:"Deactive",
+    description:"Deactive(TODO)",
     icon:"ShieldMinus",
     url:"/admin/companies/edit"
   }
@@ -392,7 +392,7 @@ export const navItems: NavItem[] = [
 
 export const CompanyActions: ColumnAction[] = [{
   id:1,
-  isTopSeparater:false,
+  isTopSeparater:true,
   description:"View details",
   icon:"BookUser",
   url:"/admin/companies/"
@@ -400,7 +400,14 @@ export const CompanyActions: ColumnAction[] = [{
 {
   id:2,
   isTopSeparater:false,
-  description:"Update",
+  description:"Edit",
   icon:"PenLine",
   url:"/admin/companies/edit/"
+}
+,{
+  id:3,
+  isTopSeparater:false,
+  description:"Deactive(TODO)",
+  icon:"ShieldMinus",
+  url:"/admin/companies/edit"
 }]
