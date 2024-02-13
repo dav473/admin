@@ -23,13 +23,21 @@ const CompanyInfo = ({ isEdit }: Props) => {
   return (
     <>
       <div className="flex justify-between flex-wrap flex-1 ">
-        <div className="basis-1/3 pr-2 h-80">
-          <CompanyInfoCard className="w-full h-full" company={res} />
+        <div className="basis-full flex justify-between  flex-wrap  h-96 border rounded">
+          <div className="basis-1/3 pr-2">
+            <CompanyInfoCard className="w-full h-full" company={res} />
+          </div>
+          <div className="basis-2/3">
+            <CompanyMetaInfoCard
+              className="w-full h-full"
+              company={res}
+              isEdit={isEdit}
+            />
+          </div>
+          <p className="basis-full">fasdfsda</p>
         </div>
-        <div className="basis-2/3 pr-2 h-80">
-          <CompanyMetaInfoCard className="w-full h-full" company={res} />
-        </div>
-        <div className="basis-full pt-2 overflow-y-hidden ">
+
+        <div className="basis-full pt-10 overflow-y-hidden ">
           <CompanyMemberCard company={res} isEdit={isEdit} />
         </div>
       </div>
