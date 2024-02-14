@@ -1,3 +1,4 @@
+import MetaInfoSelector from "@/components/MetaInfoSelector";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-label";
@@ -15,7 +16,8 @@ const NewMetaInfo = () => {
           >
             KEY
           </Label>
-          <Input id="metax" value="Canada" readOnly />
+          
+          <MetaInfoSelector />
         </div>
         <div className="basis-2/5 mr-4">
           <Label
@@ -24,22 +26,22 @@ const NewMetaInfo = () => {
           >
             VALUE
           </Label>
-          <Input id="metax" value="Canada" readOnly />
+          <Input id="metax" value="Canada" className="mt-1" readOnly />
         </div>
         <div>
           <Button
-            className="mr-4 ring-1 ring-neutral-950  ring-inset"
+            className="mr-2 ring-1  ring-red-500 ring-inset"
             variant="outline"
             size="icon"
           >
-            <MinusSquare className="h-6 w-6" />
+            <MinusSquare className="h-4 w-4" />
           </Button>
           <Button
             className="ring-1 ring-green-500 ring-inset"
             variant="outline"
             size="icon"
           >
-            <PlusSquare className="h-6 w-6" />
+            <PlusSquare className="h-4 w-4" />
           </Button>
         </div>
       </div>
