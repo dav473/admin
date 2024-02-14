@@ -7,7 +7,10 @@ import { User, Company } from "@/types/index";
 import { Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { userColumns, companyColumns } from "./columns";
-import AddCompany from "@/components/AddDialog";
+import AddDialog from "@/components/AddDialog";
+
+import UserDialog from "@/components/UserDialog";
+import CompanyDialog from '@/components/CompanyDialog';
 
 interface Props {
   data: User[] | Company[];
@@ -17,14 +20,15 @@ interface Props {
 export const InfoTable: React.FC<Props> = ({ data, dataType }:Props) => {
   const router = useRouter();
   const { columns } = dataType === "User" ? { columns: userColumns } : { columns: companyColumns };
+  const dialogContent = dataType === "User" ? <UserDialog /> : <CompanyDialog />
   return (
     <>
       <div className="flex items-start justify-between">
         <Heading
           title={`${dataType} (${data.length})`}
         />
-        
-        <AddCompany />
+  
+        <AddDialog customDialog={dialogContent} />
       </div>
       <Separator />
       

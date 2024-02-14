@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -6,9 +6,12 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Plus } from "lucide-react";
-import UserDialog from "./UserDialog";
 
-export default function AddDialog() {
+interface Props{
+  customDialog: ReactNode
+}
+
+export default function AddDialog({customDialog}:Props) {
   return (
     <div>
       {" "}
@@ -21,7 +24,7 @@ export default function AddDialog() {
         </DialogTrigger>
 
         <DialogContent className="sm:max-w-[700px]">
-          <UserDialog />
+          {customDialog}
         </DialogContent>
       </Dialog>
     </div>

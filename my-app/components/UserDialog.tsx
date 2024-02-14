@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import RoleSelector from '@/components/ui/cus_role_selector'
 import { AddMetaInfo } from "./AddMetaInfo";
+import { Switch } from "./ui/switch";
 
 
 
@@ -66,8 +67,15 @@ const UserDialog = () => {
           <div id="role" className="col-span-3"><RoleSelector /></div>
         </div>
 
+        <div className="grid grid-cols-4 items-center gap-4">
+          <Label htmlFor="onboard" className="text-left">
+            ONBOARD STATUS
+          </Label>
+          <div id="onboard" className="col-span-3"><Switch id="airplane-mode" /></div>
+        </div>
+
         <div >
-        <AddMetaInfo />
+        <AddMetaInfo  />
         </div>
       </div>
       
